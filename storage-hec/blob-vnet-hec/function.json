@@ -2,7 +2,7 @@
   "bindings": [
     {
       "type": "blobTrigger",
-      "name": "nsgBlobTrigger",
+      "name": "vnetBlobTrigger",
       "direction": "in",
       "connection": "BLOB_CONNECTION_STRING",
       "dataType": "string",
@@ -10,7 +10,7 @@
     },
     {
       "type": "blob",
-      "name": "nsgBlobInput",
+      "name": "vnetBlobInput",
       "direction": "in",
       "connection": "BLOB_CONNECTION_STRING",
       "dataType": "string",
@@ -19,7 +19,7 @@
     {
       "name": "outputBlob",
       "type": "blob",
-      "path": "undeliverable-nsg-events/{rand-guid}-{name}",
+      "path": "undeliverable-vnet-events/{rand-guid}-{name}",
       "connection": "BLOB_CONNECTION_STRING",
       "direction": "out"
     }

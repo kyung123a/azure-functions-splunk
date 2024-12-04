@@ -17,12 +17,12 @@ const splunk = require('../helpers/splunk');
 module.exports = async function (context) {
 
     await splunk
-            .sendToHEC(context.bindings.nsgBlobInput)
+            .sendToHEC(context.bindings.vnetBlobInput)
             .catch(err => {
                 context.log.error(`Error posting to Splunk HTTP Event Collector: ${err}`);
 
-                // If the event was not successfully sent to Splunk, drop the event in a storage blob container undeliverable-nsg-events
-                context.bindings.outputBlob = context.bindings.nsgBlobInput;
+                // If the event was not successfully sent to Splunk, drop the event in a storage blob container undeliverable-vnet-events
+                context.bindings.outputBlob = context.bindings.vnetBlobInput;
             })
     context.done();
 };

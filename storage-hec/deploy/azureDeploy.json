@@ -32,24 +32,24 @@
                 "description": "Storage Account TLS version"
             }
         },
-        "nsgConnectionString": {
+        "vnetConnectionString": {
             "type": "string",
             "metadata": {
-                "description": "Connection string for the storage account storing the NSG flow logs"
+                "description": "Connection string for the storage account storing the VNet flow logs"
             }
         },
-        "nsgContainer": {
+        "vnetContainer": {
             "type": "string",
             "defaultValue": "insights-logs-networksecuritygroupflowevent",
             "metadata": {
-                "description": "Blob container for NSG flow logs"
+                "description": "Blob container for VNet flow logs"
             }
         },
-        "nsgSourceType": {
+        "vnetSourceType": {
             "type": "string",
-            "defaultValue": "azure:nsg:flowlog",
+            "defaultValue": "azure:vnet:flowlog",
             "metadata": {
-                "description": "Splunk source type for the NSG flow logs"
+                "description": "Splunk source type for the VNet flow logs"
             }
         },
         "denormalizeEvents": {
@@ -161,15 +161,15 @@
                         },
                         {
                             "name": "BLOB_PATH",
-                            "value": "[parameters('nsgContainer')]"
+                            "value": "[parameters('vnetContainer')]"
                         },
                         {
                             "name": "BLOB_CONNECTION_STRING",
-                            "value": "[parameters('nsgConnectionString')]"
+                            "value": "[parameters('vnetConnectionString')]"
                         },
                         {
-                            "name": "NSG_SOURCETYPE",
-                            "value": "[parameters('nsgSourceType')]"
+                            "name": "VNET_SOURCETYPE",
+                            "value": "[parameters('vnetSourceType')]"
                         },
                         {
                             "name": "DENORMALIZE_EVENTS",

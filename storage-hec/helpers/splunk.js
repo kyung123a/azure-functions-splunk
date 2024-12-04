@@ -34,10 +34,10 @@ const getTimeStamp = function(message) {
 const getHECPayload = async function(blobContent) {
 
     let denormalize = (process.env["DENORMALIZE_EVENTS"].toLowerCase() === 'true')
-    let sourcetype = process.env["NSG_SOURCETYPE"]
+    let sourcetype = process.env["VNET_SOURCETYPE"]
     let payload = ''
     
-    // https://learn.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview
+    // https://learn.microsoft.com/azure/network-watcher/network-watcher-vnet-flow-logging-overview
     let records = blobContent.records
 
     records.forEach(function(record) {
